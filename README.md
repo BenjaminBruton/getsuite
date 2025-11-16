@@ -1,59 +1,61 @@
-NetSuite FastAPI Mock API
+✨ NetSuite FastAPI Mock API Server
 
-This project provides a persistent, full-featured Mock API Server designed to simulate the NetSuite SuiteTalk REST Web Services interface. It is built using Python, FastAPI, and SQLAlchemy (with SQLite) to offer realistic latency and state persistence across restarts.
+This project delivers a persistent, high-fidelity Mock API Server designed for developers integrating with the NetSuite SuiteTalk REST Web Services.
 
-Use this mock environment for local development, integration testing, and front-end development when access to a live NetSuite sandbox is unavailable or unnecessary.
+Built with Python, FastAPI, and SQLAlchemy (SQLite), this server offers realistic latency simulation and data persistence, making it the perfect replacement for a live sandbox during local development, testing, and CI/CD pipelines.
 
 🚀 Getting Started
 
-Follow these steps to pull the repository, set up your isolated environment, and run the server locally.
+Follow these steps to clone the repository, set up your isolated environment, and run the server locally.
 
-Prerequisites
+⚙️ Prerequisites
 
 You must have Python 3.9+ and Git installed on your system.
 
-1. Clone the Repository
+1️⃣ Clone the Repository
 
-First, use Git to clone the repository to your local machine:
+Clone the project to your local machine:
 
+```
 git clone [https://github.com/BenjaminBruton/getsuite.git](https://github.com/BenjaminBruton/getsuite.git)
 cd getsuite
+```
 
+2️⃣ Set Up the Virtual Environment (venv)
 
-2. Set Up the Virtual Environment (venv)
-
-It is highly recommended to use a virtual environment to isolate project dependencies from your global Python installation.
+Using a virtual environment is essential for isolating dependencies and ensuring deployment success.
 
 Create the environment:
 
+```
 python3 -m venv venv
-
+```
 
 Activate the environment:
 
 macOS / Linux:
-
+```
 source venv/bin/activate
-
+```
 
 Windows (Command Prompt):
-
+```
 venv\Scripts\activate
-
+```
 
 Install dependencies: This installs FastAPI, Uvicorn, and SQLAlchemy.
-
+```
 pip install -r requirements.txt
-
+```
 
 3. Run the API Server
 
 The application uses Uvicorn to serve the FastAPI application.
 
 Start the server:
-
+```
 uvicorn mock_netsuite_api:app --reload
-
+```
 
 (The --reload flag is optional but useful for development, as it restarts the server automatically when code changes.)
 
