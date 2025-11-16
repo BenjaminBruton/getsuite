@@ -76,74 +76,38 @@ Documentation URL: http://127.0.0.1:8000/docs
 
 The following endpoints simulate the NetSuite SuiteTalk REST Web Services structure. The database state is saved to a file named netsuite_mock.db and persists across server restarts.
 
-Method
+Method - Endpoint
 
-Endpoint
+Description - Status Codes
 
-Description
+POST - /services/rest/record/v1/customer
 
-Status Codes
+Creates a new Customer record. - 201 Created
 
-POST
+GET - /services/rest/record/v1/customer
 
-/services/rest/record/v1/customer
+Retrieves all Customer records (collection). - 200 OK
 
-Creates a new Customer record.
+GET - /services/rest/record/v1/customer/{id}
 
-201 Created
+Retrieves a single Customer record. - 200 OK, 404 Not Found
 
-GET
+PUT - /services/rest/record/v1/customer/{id}
 
-/services/rest/record/v1/customer
+Updates a Customer (e.g., sets status to 'On Hold'). - 204 No Content, 404 Not Found
 
-Retrieves all Customer records (collection).
+DELETE - /services/rest/record/v1/customer/{id}
 
-200 OK
+Deletes a Customer record. - 204 No Content, 404 Not Found
 
-GET
+POST - /services/rest/record/v1/salesorder
 
-/services/rest/record/v1/customer/{id}
+Creates a new Sales Order record. - 201 Created, 400 Bad Request (if Customer ID is missing)
 
-Retrieves a single Customer record.
+PUT - /services/rest/record/v1/salesorder/{id}
 
-200 OK, 404 Not Found
+Updates a Sales Order (e.g., sets status to 'Billed'). - 204 No Content, 404 Not Found
 
-PUT
+DELETE - /services/rest/record/v1/salesorder/{id}
 
-/services/rest/record/v1/customer/{id}
-
-Updates a Customer (e.g., sets status to 'On Hold').
-
-204 No Content, 404 Not Found
-
-DELETE
-
-/services/rest/record/v1/customer/{id}
-
-Deletes a Customer record.
-
-204 No Content, 404 Not Found
-
-POST
-
-/services/rest/record/v1/salesorder
-
-Creates a new Sales Order record.
-
-201 Created, 400 Bad Request (if Customer ID is missing)
-
-PUT
-
-/services/rest/record/v1/salesorder/{id}
-
-Updates a Sales Order (e.g., sets status to 'Billed').
-
-204 No Content, 404 Not Found
-
-DELETE
-
-/services/rest/record/v1/salesorder/{id}
-
-Deletes a Sales Order record.
-
-204 No Content, 404 Not Found
+Deletes a Sales Order record. - 204 No Content, 404 Not Found
