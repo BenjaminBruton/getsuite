@@ -1,0 +1,10 @@
+# Virtual environment
+venv/
+.venv/
+
+# Compiled Python files
+__pycache__/
+*.pyc
+
+# Local Database (CRITICAL: Do not commit your SQLite file)
+netsuite_mock.db
